@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    height: 10vh;
+    background-color: aqua;
+    display: flex;
+    justify-content: space-between;
+}
+
+.brand {
+    width: 15vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand span {
+    color: red;
+}
+
+#navbar ul, li, a {
+    color: black;
+    font-size: 1.4rem;
+    text-decoration: none;
+    list-style-type: none;
+    margin: 30px;
+}
+
+#navbar a:hover {
+    color: coral;
+}
+
+#menu_btn {
+    display: none;
+}
+
+
+@media only screen and (max-width: 600px) {
+    #navbar ul, li, a {
+        display: none;
+    }
+
+    #menu_btn {
+        display: block;
+        position: absolute;
+        background: url(./img/530-5305435_hamburger-icon-png-circle-clipart.png) no-repeat;
+        background-size: 50px;
+        width: 50px;
+        height: 50px;
+        right: 10px;
+        cursor: pointer;
+    }
+
+    #menu_btn.active {
+        position: absolute;
+        right: 10px;
+        background: url(./img/download.png) no-repeat;
+        background-size: 50px;
+        width: 50px;
+        height: 50px;
+        transition: .3s ease;
+        z-index: 999;
+    }
+
+    #navbar.active {
+        position: absolute;
+        background-color: grey;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    #navbar ul, li, a.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10vh;
+        z-index: 999;
+    }
+}
